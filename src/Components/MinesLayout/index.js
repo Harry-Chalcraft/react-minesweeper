@@ -67,12 +67,9 @@ const MinesLayout = ({
     }
 
     const checkGameStatus = () => {
-        console.log("checking status");
         const currentStatus = checkWinner();
         if (currentStatus) {
-            console.log("count value", count);
             if (count === 71) {
-                console.log("Is winner");
                 setStatus("WINNER");
                 setGameState(true);
                 setCount(0);
@@ -88,7 +85,6 @@ const MinesLayout = ({
 
     const showMines = () => {
         const temp = Object.assign([], hideShowMask);
-        console.log("showing mines");
         minesGrid.forEach(element => {
             var x = Math.floor(element / 9);
             var y = element % 9;
@@ -98,7 +94,6 @@ const MinesLayout = ({
     }
 
     const checkWinner = () => {
-        console.log("checking winner");
         var flag = true;
         minesGrid.forEach(element => {
             var x = Math.floor(element / 9);
@@ -107,7 +102,6 @@ const MinesLayout = ({
                 flag = false;
             }
         });
-        console.log("flag value", flag);
         return flag;
     }
 
